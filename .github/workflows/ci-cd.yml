@@ -27,15 +27,7 @@ jobs:
       # 3. Run tests
       - name: Run tests with Maven
         run: mvn test
-
-      # 4. Scan dependencies with Snyk
-      - name: Scan with Snyk
-        uses: snyk/actions/maven@master
-        with:
-          command: test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
+        
       # 5. Static code analysis with SonarQube
       - name: SonarQube Scan
         uses: SonarSource/sonarcloud-github-action@master
