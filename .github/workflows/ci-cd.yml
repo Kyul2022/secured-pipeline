@@ -30,7 +30,7 @@ jobs:
 
       # 4. Scan dependencies with Snyk
       - name: Scan with Snyk
-        uses: snyk/actions/maven@v1
+        uses: snyk/actions/maven@master
         with:
           command: test
         env:
@@ -38,7 +38,7 @@ jobs:
 
       # 5. Static code analysis with SonarQube
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v1.0
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
